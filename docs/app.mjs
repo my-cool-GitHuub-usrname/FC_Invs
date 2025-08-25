@@ -1,6 +1,6 @@
 import { getImage } from './util.mjs'
-import { CanvasEventManager } from '../lib/CanvasManager.mjs'
-import * as InventoryWindows from '../lib/inventories.mjs'
+import { CanvasEventManager } from './lib/CanvasManager.mjs'
+import * as InventoryWindows from './lib/inventories.mjs'
 
 window.canvas = document.getElementById('demo')
 const canvasManager = new CanvasEventManager(window.canvas)
