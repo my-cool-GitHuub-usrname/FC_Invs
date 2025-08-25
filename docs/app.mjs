@@ -1,4 +1,4 @@
-import { getImage } from '../docs/util.mjs'
+import { getImage } from './util.mjs'
 import { CanvasEventManager } from '../lib/CanvasManager.mjs'
 import * as InventoryWindows from '../lib/inventories.mjs'
 
