@@ -1,4 +1,4 @@
-import { layouts } from '../lib/layouts.mjs'
+import { layouts } from './lib/layouts.mjs'
 
 globalThis.layouts = layouts
 
