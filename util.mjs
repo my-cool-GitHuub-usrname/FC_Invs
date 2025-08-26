@@ -13,18 +13,18 @@ function patchPath (path) {
 window.loadedImageBlobs = {}
 
 const images = [
-  'icons/minecraft:brick',
-  'icons/minecraft:brain_coral',
-  'icons/minecraft:redstone',
-  'icons/minecraft:powered_rail',
-  'icons/minecraft:bookshelf',
-  'icons/minecraft:compass',
-  'icons/minecraft:lava_bucket',
-  'icons/minecraft:apple',
-  'icons/minecraft:iron_axe',
-  'icons/minecraft:golden_sword',
-  'icons/minecraft:glass_bottle',
-  'icons/minecraft:chest_minecart'
+  'icons/minecraft_brick',
+  'icons/minecraft_brain_coral',
+  'icons/minecraft_redstone',
+  'icons/minecraft_powered_rail',
+  'icons/minecraft_bookshelf',
+  'icons/minecraft_compass',
+  'icons/minecraft_lava_bucket',
+  'icons/minecraft_apple',
+  'icons/minecraft_iron_axe',
+  'icons/minecraft_golden_sword',
+  'icons/minecraft_glass_bottle',
+  'icons/minecraft_chest_minecart'
 ]
 
 for (const win in layouts) {
