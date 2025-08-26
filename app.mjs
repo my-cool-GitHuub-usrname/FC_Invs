@@ -7,13 +7,13 @@ const canvasManager = new CanvasEventManager(window.canvas)
 canvasManager.setScale(3)
 
 const testItems = [
-  'icons/minecraft:brick',
-  'icons/minecraft:brain_coral',
-  'icons/minecraft:redstone',
-  'icons/minecraft:powered_rail',
-  'icons/minecraft:bookshelf',
-  'icons/minecraft:apple',
-  'icons/minecraft:compass'
+  'icons/minecraft_brick',
+  'icons/minecraft_brain_coral',
+  'icons/minecraft_redstone',
+  'icons/minecraft_powered_rail',
+  'icons/minecraft_bookshelf',
+  'icons/minecraft_apple',
+  'icons/minecraft_compass'
 ]
 
 const getImageIcon = (item) => {
