@@ -6,7 +6,7 @@ let IMAGE_ROOT = './textures/'
 
 function patchPath (path) {
   if (IMAGE_ROOT.includes('.com')) { path = path.replace('block/', 'blocks/'); path = path.replace('item/', 'items/') }
-  if (path.includes('enchant_table_anim'))path = 'enchant_table_anims2'
+  if (path.includes('enchant_table_anim'))path = './textures/gui/enchant_table_anims2'
   return path
 }
 
