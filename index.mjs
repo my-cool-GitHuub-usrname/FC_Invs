@@ -1,5 +1,5 @@
-export { CanvasEventManager } from './lib/CanvasManager.mjs'
-export { InventoryWindow } from './lib/InventoryWindow.mjs'
+export { CanvasEventManager } from './docs/lib/CanvasManager.mjs'
+export { InventoryWindow } from './docs/lib/InventoryWindow.mjs'
 
 export {
   CreativeWin,
@@ -15,4 +15,4 @@ export {
 
   VillagerWin,
   HotbarWin
-} from './lib/inventories.mjs'
+} from './docs/lib/inventories.mjs'
