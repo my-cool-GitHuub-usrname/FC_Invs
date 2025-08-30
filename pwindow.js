@@ -242,9 +242,13 @@ class Item {
   constructor (type, count, tooltipImg = null) {
     this.type = type
     this.count = count
-    this.displayName = type //deprecated, still here in case breaks stuff
+    this.displayName = type //deprecated, still here in case removing it breaks stuff
     this.stackSize = 64
     this.tooltipImg = tooltipImg
+
+    if (this.tooltipImg) {
+      loadRuntimeTooltip(this.tooltipImg)
+    }
   }
 
   clone () {
@@ -288,3 +292,10 @@ setTimeout(() => {
 //   let windows = {}
 //   windows['minecraft:inventory'] = { clas: PlayerInventory }
 // }
+
+function loadRuntimeTooltip (atPath) { //this is just loadRuntimeImage cause it wouldnt let me import it from util.mjs 
+  const img = new Image() // Create new img element
+  img.src = 'textures/' + atPath + '.png' // Set source path
+  img.style.imageRendering = 'pixelated'
+  window.loadedImageBlobs[atPath] = img
+}
