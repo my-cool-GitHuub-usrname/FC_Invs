@@ -239,15 +239,16 @@ class PWindowManager {
 }
 
 class Item {
-  constructor (type, count) {
+  constructor (type, count, tooltipImg = null) {
     this.type = type
     this.count = count
-    this.displayName = type
+    this.displayName = type //deprecated, still here in case breaks stuff
     this.stackSize = 64
+    this.tooltipImg = tooltipImg
   }
 
   clone () {
-    return new Item(this.type, this.count)
+    return new Item(this.type, this.count, this.tooltipImg)
   }
 }
 

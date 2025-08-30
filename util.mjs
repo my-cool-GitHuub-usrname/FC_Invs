@@ -4,16 +4,16 @@ globalThis.layouts = layouts
 
 let IMAGE_ROOT = './textures/'
 
-function patchPath (path) {
-  if (IMAGE_ROOT.includes('.com')) { path = path.replace('block/', 'blocks/'); path = path.replace('item/', 'items/') }
-  if (path.includes('enchant_table_anim'))path = './textures/gui/enchant_table_anims2'
-  return path
-}
+//function patchPath (path) {
+  //if (IMAGE_ROOT.includes('.com')) { path = path.replace('block/', 'blocks/'); path = path.replace('item/', 'items/') }
+  //if (path.includes('enchant_table_anim'))path = './textures/gui/enchant_table_anims2'
+  //return path
+//}
 
 window.loadedImageBlobs = {}
 
 const images = [
-  'icons/minecraft_brick',
+  'icons/minecraft_bricks',
   'icons/minecraft_brain_coral',
   'icons/minecraft_redstone',
   'icons/minecraft_powered_rail',
@@ -40,7 +40,7 @@ for (const win in layouts) {
 function loadAllImagesWeb () {
   for (const path of images) {
     const img = new Image() // Create new img element
-    img.src = patchPath(IMAGE_ROOT + path) + '.png' // Set source path
+    img.src = IMAGE_ROOT + path + '.png' // Set source path
     img.onload = function () {
       window.loadedImageBlobs[path] = this
     }
@@ -49,8 +49,7 @@ function loadAllImagesWeb () {
 
 function loadRuntimeImage (atPath) {
   const img = new Image() // Create new img element
-  // if (IMAGE_ROOT.includes('.com')) {atPath = atPath.replace('block/', 'blocks/');atPath=atPath.replace('item/', 'items/')}
-  img.src = patchPath(IMAGE_ROOT + atPath) + '.png' // Set source path
+  img.src = IMAGE_ROOT + atPath + '.png' // Set source path
   img.style.imageRendering = 'pixelated'
   // img.onload = function () {
   //   loadedImageBlobs[path] = this
@@ -59,12 +58,8 @@ function loadRuntimeImage (atPath) {
 }
 
 export function getImage (options) {
-  let path = patchPath(options.path)
-
-  if (!path && options.with.startsWith('item.')) { // Temp to load image icons
-    path = options.with.replace('.', '/')
-    loadRuntimeImage(path)
-  }
+  let path = options.path
+  //console.log(path)
 
   if (!window.loadedImageBlobs[path]) {
     loadRuntimeImage(path)
@@ -73,4 +68,4 @@ export function getImage (options) {
   return window.loadedImageBlobs[path]
 }
 
-loadAllImagesWeb()
+//loadAllImagesWeb()

@@ -7,7 +7,7 @@ const canvasManager = new CanvasEventManager(window.canvas)
 canvasManager.setScale(3)
 
 const testItems = [
-  'icons/minecraft_brick',
+  'icons/minecraft_bricks',
   'icons/minecraft_brain_coral',
   'icons/minecraft_redstone',
   'icons/minecraft_powered_rail',
@@ -17,7 +17,15 @@ const testItems = [
 ]
 
 const getImageIcon = (item) => {
-  return { path: testItems[item.type], tip: 'item name here' }
+  let path
+  if (typeof item.type === "number") {
+    path = testItems[item.type] // for demo code that used indexes to get a string from an array
+  } else {
+    path = item.type // for me cause im using strings directly
+  }
+  return { path, tip: item.displayName }
+
+  //return { path: testItems[item.type], tip: 'item name here' }
 }
 
 window.inventory = new InventoryWindows.PlayerWin(canvasManager, {
