@@ -246,8 +246,8 @@ class Item {
     this.stackSize = 64
     this.tooltipImg = tooltipImg
 
-    if (this.tooltipImg) {
-      loadRuntimeTooltip(this.tooltipImg)
+    if (this.tooltipImg && !window.loadedImageBlobs["textures/" + tooltipImg + ".png"]) {
+      loadRuntimeTooltip(this.tooltipImg) //i pre-load all the tool tip images on item creation
     }
   }
 
@@ -261,7 +261,7 @@ window.Item = Item
 class PWindow {
   slots = [
     new Item(2, 22),
-    new Item(3, 18),
+    new Item(3, 28),
     new Item(4, 16),
     new Item(5, 15)
   ]
@@ -294,8 +294,8 @@ setTimeout(() => {
 // }
 
 function loadRuntimeTooltip (atPath) { //this is just loadRuntimeImage cause it wouldnt let me import it from util.mjs 
-  const img = new Image() // Create new img element
-  img.src = 'textures/' + atPath + '.png' // Set source path
+  const img = new Image()
+  img.src = 'textures/' + atPath + '.png'
   img.style.imageRendering = 'pixelated'
   window.loadedImageBlobs[atPath] = img
 }
